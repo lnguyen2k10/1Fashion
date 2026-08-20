@@ -32,13 +32,32 @@ function extractCoverImage(item: ShopRow): string {
 
 async function FilterSection() {
   const supabase = await createClient()
-  const shopsResult = await supabase.from('active_landing_pages')
+  // 1. Fetch featured VIP shops
+  const featuredResult = await supabase.from('active_homepage_shop_features')
     .select('business_slug, business_name, category, location_district, location_city, is_verified, logo_url, content_json')
     .not('business_id', 'in', `(${DEMO_BUSINESS_IDS.join(',')})`)
-    .order('updated_at', { ascending: false })
+    .order('starts_at', { ascending: false })
     .limit(12)
+    
+  // 2. Fetch a pool of latest active shops
+  const recentResult = await supabase.from('active_landing_pages')
+    .select('business_slug, business_name, category, location_district, location_city, is_verified, logo_url, content_json, updated_at')
+    .not('business_id', 'in', `(${DEMO_BUSINESS_IDS.join(',')})`)
+    .order('updated_at', { ascending: false })
+    .limit(50)
+    
+  // 3. Combine and randomize
+  const featuredShops = featuredResult.data || []
+  let otherShops = (recentResult.data || []).filter(
+    shop => !featuredShops.some(f => f.business_slug === shop.business_slug)
+  )
   
-  const businesses = (shopsResult.data || []).map((item) => {
+  // Random shuffle the non-featured latest shops
+  otherShops = otherShops.sort(() => 0.5 - Math.random())
+  
+  const combined = [...featuredShops, ...otherShops].slice(0, 12)
+  
+  const businesses = combined.map((item) => {
     const json = item.content_json as any
     return {
       slug: item.business_slug || '',
