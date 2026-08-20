@@ -34,10 +34,10 @@ export default function AboutPage() {
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#111] to-[#0a0a0a] z-10" />
           <Image
-            src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop"
-            alt="Fashion Shop"
+            src="/images/about-hero.png"
+            alt="1Fashion Hero"
             fill
-            className="object-cover opacity-40 blur-[2px]"
+            className="object-cover opacity-60 blur-[1px]"
             priority
           />
         </motion.div>
