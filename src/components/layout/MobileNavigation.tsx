@@ -45,7 +45,7 @@ export function MobileNavigation() {
     <div className="mx-auto grid max-w-lg grid-cols-5">{items.map((item) => {
       const Icon = item.icon
       const active = item.exact ? pathname === item.href : pathname === item.href || pathname.startsWith(`${item.href}/`)
-      return <Link key={item.href} href={item.href} aria-current={active ? 'page' : undefined} className={`flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl px-1 text-[10px] font-semibold transition ${active ? 'text-[#B8860B]' : 'text-zinc-500 active:bg-zinc-100'}`}>
+      return <Link key={item.href} href={item.href} aria-current={active ? 'page' : undefined} className={`flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl px-1 text-[10px] font-semibold transition-all duration-200 active:scale-95 ${active ? 'text-[#B8860B]' : 'text-zinc-500 active:bg-zinc-100'}`}>
         <Icon size={20} strokeWidth={active ? 2.4 : 1.9} /><span className="max-w-full truncate">{item.label}</span>
       </Link>
     })}</div>

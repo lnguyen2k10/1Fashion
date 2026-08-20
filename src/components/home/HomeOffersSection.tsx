@@ -71,7 +71,7 @@ export function HomeOffersSection({ offers }: HomeOffersSectionProps) {
                   </div>
                   <Link 
                     href={`/${offer.business_profiles?.slug}`} 
-                    className="bg-[#1A1A1A] text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full hover:bg-[#D4AF37] hover:text-black transition-colors"
+                    className="bg-[#1A1A1A] text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full hover:bg-[#D4AF37] hover:text-black transition-all active:scale-95"
                   >
                     Tới Cửa Hàng
                   </Link>

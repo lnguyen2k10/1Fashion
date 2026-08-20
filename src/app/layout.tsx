@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import NextTopLoader from 'nextjs-toploader';
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin", "vietnamese"], variable: "--font-sans" });
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   description: "Nền tảng danh bạ mua sắm quy tụ các cửa hàng uy tín nhất tại TPHCM.",
   keywords: ["1Fashion", "Danh bạ", "Mua sắm", "Cửa hàng"],
   authors: [{ name: "1Fashion Team" }],
-  viewport: "width=device-width, initial-scale=1",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 };
 
 export default function RootLayout({
@@ -25,6 +26,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning className="min-h-full bg-background text-foreground font-sans">
+        <NextTopLoader color="#D4AF37" showSpinner={false} height={3} shadow="0 0 10px #D4AF37,0 0 5px #D4AF37" />
         <Toaster position="top-right" toastOptions={{ duration: 4000 }} />
         {children}
       </body>

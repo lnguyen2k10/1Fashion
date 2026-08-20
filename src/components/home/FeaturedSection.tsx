@@ -24,7 +24,7 @@ function ShopCard({ b, idx }: { b: Shop; idx: number }) {
   const products = b.services?.slice(0, 3) || []
 
   return (
-    <Link href={`/${b.slug}`} className="block h-full">
+    <Link href={`/${b.slug}`} className="block h-full transition-transform duration-200 active:scale-[0.98]">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
