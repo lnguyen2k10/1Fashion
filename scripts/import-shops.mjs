@@ -32,7 +32,15 @@ function mapCategory(category) {
   if (cat.includes('đồng hồ')) return 'watches';
   if (cat.includes('kính')) return 'eyewear';
   if (cat.includes('trang sức') || cat.includes('hàng hiệu')) return 'luxury';
-  return 'fashion';
+  
+  // Keyword filter for generic fashion
+  const fashionKeywords = ['áo', 'quần', 'thời trang', 'đồ', 'mặc', 'boutique', 'váy', 'đầm'];
+  if (fashionKeywords.some(kw => cat.includes(kw))) {
+      return 'fashion';
+  }
+  
+  // Not a fashion category -> return null to signal exclusion
+  return null;
 }
 
 async function main() {
@@ -107,6 +115,10 @@ async function main() {
           
           // 2. Create or Update Business Profile
           const cat = mapCategory(row.category);
+          if (!cat) {
+              console.log(`Skipped (Not Fashion): ${rawName} - [${row.category}]`);
+              continue; // Bỏ qua nếu không phải ngành thời trang
+          }
           let business_id;
           
           const ratingScore = row.rating ? parseFloat(row.rating) : null;
@@ -226,8 +238,8 @@ async function main() {
                   template_id: 'market-v1',
                   content_json: contentJson,
                   draft_json: contentJson,
-                  is_published: false,
-                  status: 'Draft'
+                  is_published: true,
+                  status: 'Published'
                 });
                 
               if (landingError) {

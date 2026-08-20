@@ -32,10 +32,10 @@ function extractCoverImage(item: ShopRow): string {
 
 async function FilterSection() {
   const supabase = await createClient()
-  const shopsResult = await supabase.from('active_homepage_shop_features')
+  const shopsResult = await supabase.from('active_landing_pages')
     .select('business_slug, business_name, category, location_district, location_city, is_verified, logo_url, content_json')
     .not('business_id', 'in', `(${DEMO_BUSINESS_IDS.join(',')})`)
-    .order('starts_at', { ascending: false })
+    .order('updated_at', { ascending: false })
     .limit(12)
   
   const businesses = (shopsResult.data || []).map((item) => {
