@@ -1,0 +1,53 @@
+- generic [active] [ref=f7e1]:
+  - navigation [ref=f7e2]:
+    - generic [ref=f7e3]:
+      - link "1Fashion" [ref=f7e4] [cursor=pointer]:
+        - /url: /
+      - button [ref=f7e7]
+  - generic [ref=f7e10]:
+    - main [ref=f7e11]:
+      - generic [ref=f7e12]:
+        - generic [ref=f7e13]:
+          - generic [ref=f7e14]: Tin Tá»©c & Máº¹o Hay
+          - heading "GÃ³c Chia Sáº»." [level=1] [ref=f7e15]
+          - paragraph [ref=f7e16]: KhÃ¡m phÃ¡ nhá»¯ng máº¹o váº·t há»¯u Ã­ch, xu hÆ°á»›ng mua sáº¯m má»›i nháº¥t vÃ  cÃ¡c bÃ i viáº¿t thÃº vá»‹ tá»« cá»™ng Ä‘á»“ng 1Fashion.
+        - link "Táº¥t cáº£" [ref=f7e18] [cursor=pointer]:
+          - /url: /blog
+        - generic [ref=f7e19]:
+          - heading "ChÆ°a cÃ³ bÃ i viáº¿t" [level=3] [ref=f7e23]
+          - paragraph [ref=f7e24]: Danh má»¥c nÃ y Ä‘ang Ä‘Æ°á»£c cÃ¡c chuyÃªn gia biÃªn soáº¡n.
+    - contentinfo [ref=f7e25]:
+      - generic [ref=f7e26]:
+        - generic [ref=f7e27]:
+          - generic [ref=f7e28]:
+            - link "1Fashion" [ref=f7e29] [cursor=pointer]:
+              - /url: /
+            - paragraph [ref=f7e34]: Trung TÃ¢m ThÆ°Æ¡ng Máº¡i Thá»i Trang & Phá»¥ Kiá»‡n
+          - generic [ref=f7e35]:
+            - paragraph [ref=f7e36]: ThÃ´ng tin
+            - navigation [ref=f7e37]:
+              - link "ÄÄƒng kÃ½ cá»­a hÃ ng" [ref=f7e38] [cursor=pointer]:
+                - /url: /signup
+              - link "Cáº©m nang thá»i trang" [ref=f7e39] [cursor=pointer]:
+                - /url: /blog
+              - link "Äiá»u khoáº£n sá»­ dá»¥ng" [ref=f7e40] [cursor=pointer]:
+                - /url: /terms
+              - link "ChÃ­nh sÃ¡ch báº£o máº­t" [ref=f7e41] [cursor=pointer]:
+                - /url: /privacy
+        - generic [ref=f7e42]:
+          - generic [ref=f7e43]: Â© 2026 1Fashion. Báº£o lÆ°u má»i quyá»n.
+          - generic [ref=f7e44]: Danh báº¡ landing page cho shop thá»i trang.
+  - navigation "Äiá»u hÆ°á»›ng nhanh" [ref=f7e45]:
+    - generic [ref=f7e46]:
+      - link "Trang chá»§" [ref=f7e47] [cursor=pointer]:
+        - /url: /
+      - link "Cá»­a hÃ ng" [ref=f7e52] [cursor=pointer]:
+        - /url: /directory
+      - link "Æ¯u Ä‘Ã£i" [ref=f7e58] [cursor=pointer]:
+        - /url: /offers
+      - link "Cáº©m nang" [ref=f7e63] [cursor=pointer]:
+        - /url: /blog
+      - link "ÄÄƒng nháº­p" [ref=f7e67] [cursor=pointer]:
+        - /url: /login
+  - button "Open Next.js Dev Tools" [ref=f7e77] [cursor=pointer]
+  - alert [ref=f7e81]

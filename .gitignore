@@ -1,0 +1,71 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+/1hub_backup
+/ingest/data/
+/scratch
+.DS_Store
+*.pem
+*.sql
+!supabase/migrations/*.sql
+*.txt
+*.log*
+*.docx
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.pdf
+
+# Setup scripts in root (contains secrets)
+db-*.js
+bucket-*.js
+*-setup.js
+list_tables.js
+list_policies.js
+list_policy_details.js
+run_migration.js
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# Trash & Ingest
+trash/
+_trash/
+ingest/
+supabase/snapshots/
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

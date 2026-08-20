@@ -1,0 +1,8 @@
+- [x] Create and run migration for `shop_products` and `site_categories`.
+- [x] Fix `account_id` bug in `active_landing_pages` view.
+- [x] Migrate `UniversalTemplate.tsx` to read products from `shop_products`.
+- [x] Update frontend components (Hero, FilterBar) to support new branding (1Fashion.asia).
+- [x] Create Super Admin UI for `site_categories`.
+- [x] Update shop dashboard `services/page.tsx` to manage `shop_products`.
+- [x] Global SEO and copy updates (replace "1Beauty" with "1Fashion.asia").
+- [x] Final QA & Review for production readiness.

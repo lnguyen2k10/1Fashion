@@ -1,0 +1,35 @@
+[
+  {
+    "business_name": "Tên Cửa Hàng (Ví dụ: Thời trang Nam Nữ YODY)",
+    "category": "Thời Trang",
+    "location_district": "Quận 1",
+    "location_city": "TP. Hồ Chí Minh",
+    "address_full": "Số 123 Đường ABC, Phường XYZ, Quận 1, TP. Hồ Chí Minh",
+    "email_contact": "contact@yody.vn",
+    "operating_hours_text": "08:00 - 22:00 (Thứ 2 - Chủ Nhật)",
+    "hotline": "18002086",
+    "zalo_phone": "0987654321",
+    "logo_url": "https://example.com/logo.jpg",
+    "social_links": {
+      "facebook": "https://facebook.com/yody.vn",
+      "instagram": "https://instagram.com/yody.vn",
+      "shopee": "https://shopee.vn/yody.vn"
+    },
+    "products": [
+      {
+        "name": "Áo Polo Nam",
+        "price": 299000,
+        "original_price": 350000,
+        "image_url": "https://example.com/main-image-1.jpg",
+        "gallery_images": [
+          "https://example.com/gallery-1.jpg",
+          "https://example.com/gallery-2.jpg",
+          "https://example.com/gallery-3.jpg",
+          "https://example.com/gallery-4.jpg",
+          "https://example.com/gallery-5.jpg"
+        ],
+        "category": "Áo Nam"
+      }
+    ]
+  }
+]

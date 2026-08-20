@@ -1,0 +1,135 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "1Fashion" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e7]:
+        - link "KhÃ¡m phÃ¡" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "Sáº£n pháº©m" [ref=e10] [cursor=pointer]:
+          - /url: /directory
+        - link "Æ¯u Ä‘Ã£i" [ref=e11] [cursor=pointer]:
+          - /url: /offers
+        - link "Blog" [ref=e12] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e13]:
+        - link "Táº¡o shop" [ref=e14] [cursor=pointer]:
+          - /url: /login
+        - link [ref=e15] [cursor=pointer]:
+          - /url: /login
+          - button "ÄÄƒng nháº­p" [ref=e16]
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: Danh báº¡ thá»i trang
+        - heading "KhÃ¡m phÃ¡ phong cÃ¡ch cá»§a báº¡n" [level=1] [ref=e26]
+        - paragraph [ref=e27]: Danh Báº¡ Thá»i Trang & Phá»¥ Kiá»‡n HÃ ng Äáº§u Viá»‡t Nam
+        - generic [ref=e28]:
+          - textbox [ref=e33]:
+            - /placeholder: TÃªn shop, danh má»¥c hoáº·c sáº£n pháº©m
+          - combobox [ref=e38]:
+            - option "ToÃ n TP. Há»“ ChÃ­ Minh" [selected]
+            - option "Quáº­n 1"
+            - option "Quáº­n 3"
+            - option "Quáº­n 4"
+            - option "Quáº­n 5"
+            - option "Quáº­n 6"
+            - option "Quáº­n 7"
+            - option "Quáº­n 8"
+            - option "Quáº­n 10"
+            - option "Quáº­n 11"
+            - option "Quáº­n 12"
+            - option "BÃ¬nh Tháº¡nh"
+            - option "BÃ¬nh TÃ¢n"
+            - option "GÃ² Váº¥p"
+            - option "PhÃº Nhuáº­n"
+            - option "TÃ¢n BÃ¬nh"
+            - option "TÃ¢n PhÃº"
+            - option "Thá»§ Äá»©c"
+            - option "BÃ¬nh ChÃ¡nh"
+            - option "Cáº§n Giá»"
+            - option "Cá»§ Chi"
+            - option "HÃ³c MÃ´n"
+            - option "NhÃ  BÃ¨"
+          - button "TÃ¬m kiáº¿m" [ref=e39]
+      - generic [ref=e42]:
+        - paragraph [ref=e43]: Danh báº¡ Ä‘ang hoáº¡t Ä‘á»™ng
+        - paragraph [ref=e44]: 7 cá»­a hÃ ng
+    - generic [ref=e47]:
+      - heading "Danh Má»¥c" [level=2] [ref=e48]
+      - button "Khu vá»±c TPHCM" [ref=e50]
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: Æ¯u ÄÃ£i Äá»™c Quyá»n
+          - heading "Khuyáº¿n MÃ£i Má»›i Nháº¥t" [level=2] [ref=e72]
+        - link "Xem táº¥t cáº£ Æ°u Ä‘Ã£i" [ref=e73] [cursor=pointer]:
+          - /url: /offers
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - img "TÃªn Æ¯u ÄÃ£i Má»›i" [ref=e79]
+            - generic [ref=e80]: HOT
+          - generic [ref=e83]:
+            - img "Logo" [ref=e85]
+            - link "Tá»›i Cá»­a HÃ ng" [ref=e86] [cursor=pointer]:
+              - /url: /p/bona-shop-5k4
+          - generic [ref=e87]:
+            - generic [ref=e88]: BoNa Shop
+            - heading "TÃªn Æ¯u ÄÃ£i Má»›i" [level=3] [ref=e89]
+            - paragraph [ref=e90]: MÃ´ táº£ chi tiáº¿t Æ°u Ä‘Ã£i...
+            - generic [ref=e91]:
+              - generic [ref=e92]: "HSD: 1/1/1970"
+              - button "Nháº­n Ngay" [ref=e96]
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - img "Giáº£m 50% ToÃ n Bá»™ GiÃ y Sneaker" [ref=e99]
+            - generic [ref=e100]: HOT
+          - generic [ref=e103]:
+            - img "Logo" [ref=e105]
+            - link "Tá»›i Cá»­a HÃ ng" [ref=e106] [cursor=pointer]:
+              - /url: /p/trendy-boutique-saigon
+          - generic [ref=e107]:
+            - generic [ref=e108]: Trendy Boutique Saigon
+            - heading "Giáº£m 50% ToÃ n Bá»™ GiÃ y Sneaker" [level=3] [ref=e109]
+            - paragraph [ref=e110]: ChÆ°Æ¡ng trÃ¬nh xáº£ kho lá»›n nháº¥t nÄƒm. Ãp dá»¥ng cho má»i dÃ²ng Sneaker táº¡i cá»­a hÃ ng.
+            - generic [ref=e111]:
+              - generic [ref=e112]: "HSD: 29/8/2026"
+              - button "Nháº­n Ngay" [ref=e116]
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - img "Äá»“ng GiÃ¡ 199K Ão Thun Cá»• TrÃ²n" [ref=e119]
+            - generic [ref=e120]: HOT
+          - generic [ref=e123]:
+            - img "Logo" [ref=e125]
+            - link "Tá»›i Cá»­a HÃ ng" [ref=e126] [cursor=pointer]:
+              - /url: /p/luxury-bags-hcm
+          - generic [ref=e127]:
+            - generic [ref=e128]: Luxury Bags & Accessories HCM
+            - heading "Äá»“ng GiÃ¡ 199K Ão Thun Cá»• TrÃ²n" [level=3] [ref=e129]
+            - paragraph [ref=e130]: CÆ¡ há»™i mua sáº¯m tháº£ ga khÃ´ng lo vá» giÃ¡. Cotton 100% thoÃ¡ng mÃ¡t.
+            - generic [ref=e131]:
+              - generic [ref=e132]: "HSD: 19/8/2026"
+              - button "Nháº­n Ngay" [ref=e136]
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - link "1Fashion" [ref=e141] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e146]: Trung TÃ¢m ThÆ°Æ¡ng Máº¡i Thá»i Trang & Phá»¥ Kiá»‡n
+        - generic [ref=e147]:
+          - paragraph [ref=e148]: ThÃ´ng tin
+          - navigation [ref=e149]:
+            - link "ÄÄƒng kÃ½ cá»­a hÃ ng" [ref=e150] [cursor=pointer]:
+              - /url: /signup
+            - link "Cáº©m nang thá»i trang" [ref=e151] [cursor=pointer]:
+              - /url: /blog
+            - link "Äiá»u khoáº£n sá»­ dá»¥ng" [ref=e152] [cursor=pointer]:
+              - /url: /terms
+            - link "ChÃ­nh sÃ¡ch báº£o máº­t" [ref=e153] [cursor=pointer]:
+              - /url: /privacy
+      - generic [ref=e154]:
+        - generic [ref=e155]: Â© 2026 1Fashion. Báº£o lÆ°u má»i quyá»n.
+        - generic [ref=e156]: Danh báº¡ landing page cho shop thá»i trang.
+  - button "Open Next.js Dev Tools" [ref=e162] [cursor=pointer]
+  - alert [ref=e166]
