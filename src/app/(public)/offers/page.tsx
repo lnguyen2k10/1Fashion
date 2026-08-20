@@ -7,29 +7,35 @@ export const metadata = {
   description: 'Tổng hợp các chương trình khuyến mãi, voucher và sản phẩm nổi bật nhất từ các đối tác thời trang, giày dép cao cấp trên toàn quốc.',
 }
 
+export const revalidate = 60
+
 export default async function OffersPage() {
   const supabase = await createClient()
 
-  // 1. Lấy dữ liệu Ưu Đãi
-  const { data: offersData } = await supabase
-    .from('business_offers')
-    .select('id, title, description, image_url, discount_code, valid_until, created_at, status, business_profiles(business_name, logo_url, slug, theme_color)')
-    .eq('status', 'active')
-    .limit(200)
+  // 1. Chạy tất cả các truy vấn cùng lúc
+  const [
+    { data: offersData },
+    { data: productsData },
+    { data: categoriesData }
+  ] = await Promise.all([
+    supabase
+      .from('business_offers')
+      .select('id, title, description, image_url, discount_code, valid_until, created_at, status, business_profiles(business_name, logo_url, slug, theme_color)')
+      .eq('status', 'active')
+      .limit(200),
+    supabase
+      .from('shop_products')
+      .select('id, name, description, price, price_original, image_url, category, is_featured, created_at, status, business_profiles(business_name, logo_url, slug, theme_color)')
+      .eq('status', 'active')
+      .limit(200),
+    supabase
+      .from('product_categories')
+      .select('id, name')
+      .eq('is_active', true)
+      .order('sort_order', { ascending: true })
+  ])
 
-  // 2. Lấy dữ liệu Sản Phẩm
-  const { data: productsData } = await supabase
-    .from('shop_products')
-    .select('id, name, description, price, price_original, image_url, category, is_featured, created_at, status, business_profiles(business_name, logo_url, slug, theme_color)')
-    .eq('status', 'active')
-    .limit(200)
 
-  // 3. Lấy dữ liệu Danh mục Sản phẩm chuẩn
-  const { data: categoriesData } = await supabase
-    .from('product_categories')
-    .select('id, name')
-    .eq('is_active', true)
-    .order('sort_order', { ascending: true })
 
   // 3. Chuẩn hóa & gộp dữ liệu
   const mixedData: ExploreItem[] = []

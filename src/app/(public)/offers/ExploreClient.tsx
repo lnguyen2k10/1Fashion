@@ -55,6 +55,14 @@ export function ExploreClient({ initialData, serverCategories = [] }: { initialD
 
   // Filter and Search logic
   const filteredData = useMemo(() => {
+    const removeAccents = (str: string) => {
+      return str
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd')
+        .replace(/Đ/g, 'D');
+    }
+
     return initialData.filter(item => {
       // 1. Tab Filter
       if (activeTab === 'offers' && item.type !== 'offer') return false
@@ -70,10 +78,10 @@ export function ExploreClient({ initialData, serverCategories = [] }: { initialD
 
       // 3. Search Filter
       if (searchQuery.trim()) {
-        const query = searchQuery.toLowerCase()
-        const titleMatch = item.title?.toLowerCase().includes(query)
-        const descMatch = item.description?.toLowerCase().includes(query)
-        const shopMatch = item.business?.business_name?.toLowerCase().includes(query)
+        const query = removeAccents(searchQuery.toLowerCase().trim())
+        const titleMatch = item.title ? removeAccents(item.title.toLowerCase()).includes(query) : false
+        const descMatch = item.description ? removeAccents(item.description.toLowerCase()).includes(query) : false
+        const shopMatch = item.business?.business_name ? removeAccents(item.business.business_name.toLowerCase()).includes(query) : false
         
         if (!titleMatch && !shopMatch && !descMatch) return false
       }

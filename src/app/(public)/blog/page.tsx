@@ -10,6 +10,9 @@ export const metadata = {
   description: 'Khám phá những mẹo vặt hữu ích, xu hướng mua sắm mới nhất và các bài viết thú vị từ cộng đồng 1Fashion.asia.',
 }
 
+export const revalidate = 300
+
+
 type BlogPost = {
   id: string
   slug?: string
@@ -31,25 +34,29 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
   const supabase = await createClient()
 
   // Build the query
-  let query = supabase
+  let postsQuery = supabase
     .from('blogs')
     .select('*, business_profiles(business_name, logo_url, slug)')
     .eq('status', 'published')
     .order('created_at', { ascending: false })
 
   if (selectedCat) {
-    query = query.eq('category', selectedCat)
+    postsQuery = postsQuery.eq('category', selectedCat)
   }
 
-  const { data: postsData, error } = await query
+  // Execute both queries concurrently
+  const [
+    { data: postsData },
+    { data: allCategoriesData }
+  ] = await Promise.all([
+    postsQuery,
+    supabase
+      .from('blogs')
+      .select('category')
+      .eq('status', 'published')
+  ])
+
   const posts = (postsData as unknown as BlogPost[]) || []
-
-  // Extract unique categories for the filter
-  const { data: allCategoriesData } = await supabase
-    .from('blogs')
-    .select('category')
-    .eq('status', 'published')
-
   const uniqueCategories = Array.from(new Set(allCategoriesData?.map(c => c.category).filter(Boolean))) as string[]
 
   const featuredPost = posts[0]

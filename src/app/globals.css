@@ -47,6 +47,16 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair tracking-tight font-bold;
   }
+
+  /* Universal click effect */
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    @apply transition-transform duration-150;
+  }
+  
+  a:active, button:active, [role="button"]:active {
+    @apply scale-[0.97];
+  }
 }
 
 @layer components {
@@ -82,7 +92,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: clip;
 }
 

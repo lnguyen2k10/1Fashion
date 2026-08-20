@@ -35,11 +35,8 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
 }) => {
   return (
     <Link href={`/${slug}`}>
-      <motion.div 
+      <div 
         className={`group relative overflow-hidden rounded-xl bg-gray-100 border border-gray-200 transition-all duration-300 hover:border-[#D4AF37] hover:shadow-[0_8px_30px_rgb(212,175,55,0.15)] ${isFeatured ? 'h-[350px] sm:h-[400px] md:h-[500px]' : 'h-[280px] sm:h-[320px] md:h-[400px]'}`}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
       >
         {/* Cover Image */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-gray-200">
@@ -87,7 +84,7 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
-            <span className="text-xs font-bold text-white group-hover:text-[#D4AF37] transition-colors">Xem cửa hàng</span>
+            <span className="text-xs font-bold text-white group-hover:text-[#D4AF37] transition-colors">Xem Shop</span>
             <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center transition-transform hover:scale-110 group-hover:bg-[#D4AF37] group-hover:text-white">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -95,7 +92,7 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </Link>
   )
 }

@@ -10,7 +10,7 @@ type NavItem = { href: string; label: string; icon: typeof House; exact?: boolea
 
 const guestItems: NavItem[] = [
   { href: '/', label: 'Trang chủ', icon: House, exact: true },
-  { href: '/directory', label: 'Cửa hàng', icon: Store },
+  { href: '/directory', label: 'Shop', icon: Store },
   { href: '/offers', label: 'Ưu đãi', icon: Tag },
   { href: '/blog', label: 'Blog', icon: BookOpen },
   { href: '/login', label: 'Đăng nhập', icon: LogIn },

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ArrowRight, MapPin, Search } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { fetchCategories } from '@/lib/services/categories'
 import { ALL_DISTRICTS } from '@/lib/constants'
 import type { SiteCategory } from '@/types/landing-page'
@@ -70,10 +71,15 @@ export function HeroSection({ content, accentColor, tagline, shopCount }: Props)
       <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-zinc-900/30 to-transparent" />
       <div className="relative mx-auto flex min-h-[640px] max-w-7xl items-center px-4 py-24 sm:min-h-[720px] sm:px-6 sm:py-28">
         <div className="max-w-3xl">
-          <p className="mb-7 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.38em]" style={{ color }}>
-            <span className="h-px w-10" style={{ backgroundColor: color }} />
-            {content?.eyebrow || 'Danh bạ thời trang'}
-          </p>
+          <div className="mb-7 flex flex-wrap items-center gap-4">
+            <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.38em]" style={{ color }}>
+              <span className="h-px w-10" style={{ backgroundColor: color }} />
+              {content?.eyebrow || 'Danh bạ thời trang'}
+            </p>
+            <Link href="/about" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur transition hover:bg-white/20">
+              Dành cho Chủ Shop <ArrowRight size={12} />
+            </Link>
+          </div>
           <h1 className="whitespace-pre-line text-4xl font-bold leading-tight text-white sm:text-5xl md:text-7xl">{title}</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">{subtitle}</p>
           {tagline && tagline !== subtitle && <p className="mt-3 text-sm font-medium text-white/55">{tagline}</p>}

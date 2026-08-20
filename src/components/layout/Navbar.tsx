@@ -87,7 +87,7 @@ function NavbarContent({ pathname }: { pathname: string }) {
 
   const navItems = [
     { label: 'Trang chủ', href: '/' },
-    { label: 'Cửa hàng', href: '/directory' },
+    { label: 'Shop', href: '/directory' },
     { label: 'Ưu đãi & Sản phẩm', href: '/offers' },
     { label: 'Blog', href: '/blog' },
     { label: 'Giới thiệu', href: '/about' },
