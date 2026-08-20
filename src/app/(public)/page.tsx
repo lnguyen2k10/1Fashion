@@ -1,7 +1,9 @@
 import type { CSSProperties } from 'react'
 import { Suspense } from 'react'
-import { createClient } from '@/lib/supabase/server'
+import { createPublicClient } from '@/lib/supabase/public'
 import { HeroSection, type HeroContent } from '@/components/home/HeroSection'
+
+export const revalidate = 60;
 import { HomeClientFilter } from '@/components/home/HomeClientFilter'
 import { HomeOffersSection } from '@/components/home/HomeOffersSection'
 import { BlogRibbon, type HomepagePost } from '@/components/home/BlogRibbon'
@@ -31,7 +33,7 @@ function extractCoverImage(item: ShopRow): string {
 }
 
 async function FilterSection() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
   // 1. Fetch featured VIP shops
   const featuredResult = await supabase.from('active_homepage_shop_features')
     .select('business_slug, business_name, category, location_district, location_city, is_verified, logo_url, content_json')
@@ -77,7 +79,7 @@ async function FilterSection() {
 }
 
 async function OffersSection() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
   const offersResult = await supabase.from('business_offers')
     .select('*, business_profiles!inner(business_name, logo_url, slug)')
     .eq('status', 'active')
@@ -90,7 +92,7 @@ async function OffersSection() {
 }
 
 async function FeaturedProductsSection() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
   const featuredProductsResult = await supabase.from('active_homepage_product_features')
     .select('id, product_id, name, description, price, image_url, category, business_slug, business_name, expires_at')
     .not('business_id', 'in', `(${DEMO_BUSINESS_IDS.join(',')})`)
@@ -102,7 +104,7 @@ async function FeaturedProductsSection() {
 }
 
 async function BlogsSection() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
   const postsResult = await supabase.from('blogs').select('id, slug, title, category, content, image_url, created_at').eq('status', 'published').order('created_at', { ascending: false }).limit(3)
   
   if (!postsResult.data || postsResult.data.length === 0) return null
@@ -110,7 +112,7 @@ async function BlogsSection() {
 }
 
 export default async function Home() {
-  const supabase = await createClient()
+  const supabase = createPublicClient()
   
   // Fetch settings and count first as they are needed for the Hero section (above the fold)
   const [settingsResult, countResult] = await Promise.all([

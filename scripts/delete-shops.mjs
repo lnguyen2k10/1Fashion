@@ -11,23 +11,7 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 
 const slugsToDelete = [
-  'thenormal-thriftshop-q9a0',
-  'tho-baby-thoi-trang-tre-em-cu-chi-uv3k',
-  'blood-brother-streetwear-baex',
-  'tiem-do-nha-lyn-7g7g',
-  'cua-hang-thanh-linh-16dm',
-  'tien-le-shop-x0zd',
-  'truong-thon-lang-nhua-shop-mo-hinhao-thun-anime-uxas',
-  'thoi-trang-cong-so-xuan-thom-xbmg',
-  'nay-mai-qwsn',
-  'qt-fashion-hikd',
-  'aster-store-7s4n',
-  'maker-80e1',
-  'kl-boutique-thoi-trang-nu-cao-cap-t349',
-  'cua-hang-thoi-trang-tre-em-new-top-n08d',
-  'easy-n-fun-store-2jjr',
-  'chou-chou-shop-m57b',
-  'thoi-trang-khang-ni-khang-ni-boutique-wkap'
+  'recircle-premium-quan-1-fx8p'
 ];
 
 async function main() {
